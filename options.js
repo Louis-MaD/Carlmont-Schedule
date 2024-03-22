@@ -1,31 +1,24 @@
-// options.js
-
-// Wait for the DOM content to load before executing the script
-document.addEventListener('DOMContentLoaded', function () {
-    // Find the save button element
-    const saveButton = document.getElementById('save');
-
-    // Check if the save button element exists
-    if (saveButton) {
-        // Add a click event listener to the save button
-        saveButton.addEventListener('click', saveOptions);
-    } else {
-        console.error('Save button not found!');
-    }
-});
-
 // Function to save options
 function saveOptions() {
-    // Find the input element by its ID
-    const inputElement = document.getElementById('input-id');
+  // Define an array to store user classes
+  const userClasses = [];
 
-    // Check if the input element exists and has a value
-    if (inputElement && inputElement.value) {
-        // Save the input value to Chrome storage or do other operations
-        chrome.storage.local.set({ key: inputElement.value }, function () {
-            console.log('Value is set to ' + inputElement.value);
-        });
-    } else {
-        console.error('Input element not found or has no value!');
+  // Loop through each class input field
+  for (let i = 1; i <= 7; i++) { // Assuming there are 7 classes
+    const classInput = document.getElementById("Class" + i);
+    if (classInput && classInput.value.trim() !== "") {
+      userClasses.push({
+        class: classInput.value.trim(),
+        // You can also include other properties like start and end times if needed
+      });
     }
+  }
+
+  // Save userClasses array to Chrome storage
+  chrome.storage.local.set({ userSchedule: userClasses }, function() {
+    console.log('User class schedule saved successfully.');
+  });
 }
+
+// Add event listener to the save button
+document.getElementById("saveButton").addEventListener("click", saveOptions);
