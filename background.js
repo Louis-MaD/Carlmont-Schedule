@@ -1,3 +1,12 @@
+// Function to get the current day and time
+function getCurrentDayAndTime() {
+  const now = new Date();
+  const dayIndex = now.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+  const day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][dayIndex];
+  const time = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  return { day, time };
+}
+
 // Function to get the user-defined class schedule from Chrome storage
 function getUserSchedule(callback) {
   chrome.storage.local.get("userSchedule", function(data) {
@@ -48,7 +57,8 @@ function updateExtensionData() {
       nextClass
     };
 
-    updatePopupContent(popupContent);
+    // Update popup content
+    chrome.storage.local.set({ popupContent: popupContent });
     updateBadgeText(currentClass ? "In class" : "Not in class");
   });
 }
