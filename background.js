@@ -12,6 +12,7 @@ function getUserSchedule(callback) {
   chrome.storage.local.get("userSchedule", function(data) {
     const userSchedule = data.userSchedule || [];
     callback(userSchedule);
+	
   });
 }
 
@@ -59,12 +60,13 @@ function updateExtensionData() {
 
     // Update popup content
     chrome.storage.local.set({ popupContent: popupContent });
-    updateBadgeText(currentClass ? "In class" : "Not in class");
+    chrome.runtime.sendMessage({ badgeText: currentClass ? "In class" : "Not in class" });
+    
   });
 }
 
 // Update extension data every minute
-setInterval(updateExtensionData, 60000);
+setInterval(updateExtensionData, 10000);
 
 // Initial update
 updateExtensionData();

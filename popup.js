@@ -1,3 +1,11 @@
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+  if (message.badgeText) {
+    // Update badge text using Chrome Extension API
+    chrome.browserAction.setBadgeText({ text: message.badgeText });
+  }
+});
+
+
 // Load the extension data and update the popup content
 chrome.storage.local.get(["popupContent", "classes"], function (data) {
   const { day, time, currentClass, nextClass } = data.popupContent;
@@ -19,3 +27,5 @@ chrome.storage.local.get(["popupContent", "classes"], function (data) {
 
   document.getElementById("schedule-info").innerHTML = scheduleInfo;
 });
+
+
