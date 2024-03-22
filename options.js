@@ -20,5 +20,15 @@ function saveOptions() {
   });
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  // Check if the save button exists before adding event listener
+  var saveButton = document.getElementById("saveButton");
+  if (saveButton) {
+    saveButton.addEventListener("click", saveOptions);
+  } else {
+    console.error("Save button not found!");
+  }
+});
+
 // Add event listener to the save button
 document.getElementById("saveButton").addEventListener("click", saveOptions);
