@@ -1,7 +1,7 @@
 // Function to get the user-defined class schedule from Chrome storage
 function getUserSchedule(callback) {
   chrome.storage.local.get("userSchedule", function(data) {
-    const userSchedule = data.userSchedule || {};
+    const userSchedule = data.userSchedule || [];
     callback(userSchedule);
   });
 }
