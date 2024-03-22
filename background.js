@@ -1,11 +1,46 @@
 // Load the school schedule
 const schoolSchedule = {
   "Monday": [
-    { "start": "08:00", "end": "09:30", "class": "Math" },
-    { "start": "10:00", "end": "11:30", "class": "Science" },
-    // Add more classes as needed
-  ],
-  // Add schedule for other days of the week
+    { "start": "08:30", "end": "09:20", "class": "Physics-P" },
+    { "start": "9:27", "end": "10:17", "class": "Pre-Calculus-HP" },
+    { "start": "10:24", "end": "11:14", "class": "English III-P" },
+    { "start": "11:21", "end": "12:14", "class": "Jazz Band II-P" },
+    { "start": "12:14", "end": "12:56", "class": "Lunch" },
+    { "start": "13:01", "end": "13:51", "class": "AP US History-HP" },
+    { "start": "13:58", "end": "14:48", "class": "AP Computer Sci A: Java-HP" },
+],
+  "Tuesday": [
+    { "start": "08:30", "end": "09:20", "class": "Physics-P" },
+    { "start": "9:27", "end": "10:17", "class": "Pre-Calculus-HP" },
+    { "start": "10:24", "end": "11:14", "class": "English III-P" },
+    { "start": "11:21", "end": "12:14", "class": "Jazz Band II-P" },
+    { "start": "12:14", "end": "12:56", "class": "Lunch" },
+    { "start": "13:01", "end": "13:51", "class": "AP US History-HP" },
+    { "start": "13:58", "end": "14:48", "class": "AP Computer Sci A: Java-HP" },
+],
+  "Wednesday": [
+    { "start": "10:02", "end": "11:27", "class": "Pre-Calculus-HP" },
+    { "start": "11:34", "end": "12:04", "class": "Flex" },
+    { "start": "12:04", "end": "12:38", "class": "Lunch" },
+    { "start": "12:48", "end": "14:13", "class": "Jazz Band II-P" },
+    { "start": "14:20", "end": "15:45", "class": "AP Computer Sci A: Java-HP" },
+],
+  "Thursday": [
+    { "start": "08:30", "end": "09:55", "class": "Physics-P" },
+    { "start": "10:02", "end": "11:27", "class": "English III-P" },
+    { "start": "11:34", "end": "12:04", "class": "Flex" },
+    { "start": "12:04", "end": "12:38", "class": "Lunch" },
+    { "start": "12:48", "end": "14:13", "class": "AP US History-HP" },
+],
+  "Friday": [
+    { "start": "08:30", "end": "09:20", "class": "Physics-P" },
+    { "start": "9:27", "end": "10:17", "class": "Pre-Calculus-HP" },
+    { "start": "10:24", "end": "11:14", "class": "English III-P" },
+    { "start": "11:21", "end": "12:14", "class": "Jazz Band II-P" },
+    { "start": "12:14", "end": "12:56", "class": "Lunch" },
+    { "start": "13:01", "end": "13:51", "class": "AP US History-HP" },
+    { "start": "13:58", "end": "14:48", "class": "AP Computer Sci A: Java-HP" },
+],
 };
 
 // Function to get the current day and time
